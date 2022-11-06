@@ -1,8 +1,8 @@
 package(default_visibility = ["//visibility:public"])
 
 config_setting(
-    name = "darwin",
-    values = {"host_cpu": "darwin"},
+    name = "darwin_x64",
+    values = {"host_cpu": "darwin_x64"},
 )
 
 config_setting(
@@ -11,12 +11,17 @@ config_setting(
 )
 
 config_setting(
-    name = "k8",
-    values = {"host_cpu": "k8"},
+    name = "linux_arm64",
+    values = {"host_cpu": "linux_arm64"}
 )
 
 config_setting(
-    name = "windows",
+    name = "linux_x64",
+    values = {"host_cpu": "linux_x64"}
+)
+
+config_setting(
+    name = "windows_x64",
     values = {"host_cpu": "windows_x64"}
 )
 

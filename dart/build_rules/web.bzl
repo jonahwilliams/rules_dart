@@ -15,7 +15,7 @@
 """Dart rules targeting web clients."""
 
 
-load(":internal.bzl", "collect_files", "layout_action", "make_dart_context", "package_spec_action")
+load(":internal.bzl", "collect_files", "layout_action", "make_dart_context", "package_config_action")
 
 
 def dart2js_action(ctx, dart_ctx, script_file,
@@ -28,7 +28,7 @@ def dart2js_action(ctx, dart_ctx, script_file,
   # Emit package spec.
   package_spec_path = ctx.label.package + "/" + ctx.label.name + ".packages"
   package_spec = ctx.actions.declare_file(build_dir + package_spec_path)
-  package_spec_action(
+  package_config_action(
       ctx=ctx,
       dart_ctx=dart_ctx,
       output=package_spec,
